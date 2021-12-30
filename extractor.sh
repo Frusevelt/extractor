@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -i
 #
 ##########################
 ## 7z archive extractor ##
@@ -13,14 +13,12 @@
 ## Variables ##
 ###############
 do_overs=0
-#max_do_overs=3
 old_dir=$(pwd)
 
 #####################
 ## Open retry loop ##
 #####################
 
-#while [ $do_overs -lt $max_do_overs ]
 while [ "$do_overs" -lt 3 ]
 do
 
@@ -83,7 +81,7 @@ do
 					read arch_path
 			
 					echo "Enter the path to extract into:"
-	     				read ext_dir
+	     				read  ext_dir
 					cd $ext_dir
 			
 					for arch in *.7z
@@ -99,6 +97,7 @@ do
 				fi
 		fi
 	do_overs=$((do_overs+1))
+	#increased the value of $do_overs by 1 everytime the retry loop is run
 done
 
 
