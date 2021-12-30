@@ -1,2 +1,2 @@
 # extractor
-CLI 7z extractor
+bash CLI 7z extractor
